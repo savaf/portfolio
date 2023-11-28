@@ -1,15 +1,18 @@
 <script setup lang="ts">
-const colorMode = useColorMode();
+// const colorMode = useColorMode();
 
-const backgroundUrl = computed(() => {
-  return colorMode.value === "dark" ? "/images/background_dark.jpg" : "/images/background_light.jpg";
-});
+// watch(colorMode, (newVal) => {
+//   console.log(newVal);
+// });
+// const backgroundUrl = computed(() => {
+//   return colorMode.value === "dark" ? "/images/background_dark.jpg" : "/images/background_light.jpg";
+// });
 </script>
 
 <template>
   <div class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col backdrop-blur-md">
     <NuxtPicture
-      :src="backgroundUrl"
+      src="/images/background_dark.jpg"
       width="1097"
       height="845"
       sizes="sm:100vw"
