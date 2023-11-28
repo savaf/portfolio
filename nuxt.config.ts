@@ -4,7 +4,14 @@ const isDev = process.env.NODE_ENV === "development";
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ["@nuxt/image", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@nuxtjs/google-fonts", "nuxt-icon", "@nuxt/content"],
+  modules: [
+    "@nuxt/image",
+    "@nuxtjs/tailwindcss",
+    // "@nuxtjs/color-mode",
+    "@nuxtjs/google-fonts",
+    "nuxt-icon",
+    "@nuxt/content",
+  ],
 
   routeRules: {
     "/**": isDev
@@ -37,14 +44,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      meta: [
-        { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "keywords", content: "" },
-        { name: "format-detection", content: "telephone=no" },
-        // { name: 'msapplication-TileColor', content: '#005AA7' },
-        // { name: 'theme-color', content: '#005AA7' },
-      ],
+      meta: [{ charset: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, { name: "keywords", content: "" }, { name: "format-detection", content: "telephone=no" }],
       link: [
         {
           rel: "shortcut icon",
@@ -101,8 +101,8 @@ export default defineNuxtConfig({
   },
 
   colorMode: {
-    preference: "dark", // default value of $colorMode.preference
-    fallback: "dark", // fallback value if not system preference found
+    preference: "system", // default value of $colorMode.preference
+    fallback: "light", // fallback value if not system preference found
     dataValue: "theme",
     hid: "nuxt-color-mode-script",
     globalName: "__NUXT_COLOR_MODE__",
