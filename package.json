@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "clean": "rimraf .nuxt dist .cache .output node_modules",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -20,11 +21,13 @@
     "@tailwindcss/typography": "^0.5.10",
     "nuxt": "^3.8.2",
     "nuxt-icon": "^0.6.6",
+    "rimraf": "^5.0.5",
     "sass": "^1.69.5",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.16",
     "@nuxt/content": "^2.9.0"
   }
 }
