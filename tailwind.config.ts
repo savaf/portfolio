@@ -9,6 +9,7 @@ import tailwindAspectRatio from "@tailwindcss/aspect-ratio";
 
 const srcDir = "./";
 export default <Partial<Config>>{
+  darkMode: ["class"],
   content: [`${srcDir}/components/**/*.{vue,js,ts,jsx,tsx}`, `${srcDir}/layouts/**/*.vue`, `${srcDir}/pages/**/*.vue`, `${srcDir}/composables/**/*.{js,ts}`, `${srcDir}/plugins/**/*.{js,ts}`, `${srcDir}/utils/**/*.{js,ts}`, `${srcDir}/App.{js,ts,vue}`, `${srcDir}/app.{js,ts,vue}`, `${srcDir}/Error.{js,ts,vue}`, `${srcDir}/error.{js,ts,vue}`, `${srcDir}/app.config.{js,ts}`],
   theme: {
     extend: {
@@ -20,6 +21,9 @@ export default <Partial<Config>>{
         "primary-dark": "#0D2438",
         "secondary-dark": "#102D44",
         "ternary-dark": "#1E3851",
+
+        primary: "#51ECF3",
+        "primary-content": "#175255",
       },
       container: {
         padding: {
