@@ -4,6 +4,6 @@ const copyrightDate = new Date().getFullYear();
 
 <template>
   <div class="flex justify-center items-center text-center">
-    <div class="font-general-regular text-lg text-ternary-dark dark:text-ternary-light">&copy; {{ copyrightDate }}</div>
+    <div class="font-general-regular text-lg text-ternary-light">&copy; {{ copyrightDate }}</div>
   </div>
 </template>
