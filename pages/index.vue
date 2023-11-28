@@ -1,1 +1,5 @@
-<template>Holamundo</template>
+<template>
+  <main>
+    <SectionHero />
+  </main>
+</template>
