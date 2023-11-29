@@ -2,10 +2,7 @@
   <div class="bg-primary-dark min-h-screen flex flex-col backdrop-blur-md">
     <SharedAppHeader />
 
-    <!-- Render contents with transition -->
-    <transition name="fade" mode="out-in">
-      <slot />
-    </transition>
+    <slot />
 
     <SharedAppFooter />
 
