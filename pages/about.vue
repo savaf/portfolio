@@ -8,5 +8,11 @@ import socialLinks from "~/data/socialLinks";
       <AboutBio />
     </div>
     <AboutCounter />
+    <div class="container mx-auto mt-16 sm:mt-32">
+      <AboutExperience />
+    </div>
+    <div class="container mx-auto mt-16 sm:mt-32">
+      <AboutEducation />
+    </div>
   </main>
 </template>
