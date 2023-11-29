@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import educations from "~/data/educations";
+const educations = await queryContent("education").find();
 </script>
 
 <template>
@@ -17,7 +17,9 @@ import educations from "~/data/educations";
         <span class="block mb-2 text-sm font-normal leading-none text-gray-500">
           <time>{{ education.date }}</time> | {{ education.company }}
         </span>
-        <p class="mb-4 text-base font-normal text-ternary-light">{{ education.description }}</p>
+        <p v-for="p in education.description" :key="p" class="mb-2 text-base font-normal text-ternary-light">
+          {{ p }}
+        </p>
       </li>
     </ol>
   </section>
