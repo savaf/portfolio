@@ -1,21 +1,22 @@
 export const socialLinks = [
-  // {
-  //   id: 1,
-  //   name: "Website",
-  //   icon: "i-heroicons-globe-alt",
-  //   url: "http://sinveraguilo.com",
-  // },
   {
     id: 2,
-    name: "GitHub",
+    name: "Look my GitHub profile",
     icon: "i-fa-github",
     url: "https://github.com/savaf",
   },
   {
     id: 3,
-    name: "LinkedIn",
+    name: "Follow on LinkedIn",
     icon: "i-fa-linkedin",
     url: "https://www.linkedin.com/in/sinver-aguilo",
+  },
+
+  {
+    id: 4,
+    name: "spencer@planetaria.tech",
+    icon: "i-heroicons-envelope-solid",
+    url: "mailto:spencer@planetaria.tech",
   },
 ];
 

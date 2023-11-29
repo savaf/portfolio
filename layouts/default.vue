@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col backdrop-blur-md">
+  <div class="bg-primary-dark min-h-screen flex flex-col backdrop-blur-md">
     <SharedAppHeader />
 
     <!-- Render contents with transition -->
