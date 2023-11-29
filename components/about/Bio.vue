@@ -6,7 +6,18 @@ import socialLinks from "~/data/socialLinks";
   <section class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
     <div class="lg:pl-20">
       <div class="max-w-xs px-2.5 lg:max-w-none">
-        <img src="/images/portrait.webp" alt="" :sizes="'(min-width: 1024px) 32rem, 20rem'" class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800" />
+        <NuxtPicture
+          src="/images/portrait.jpg"
+          format="webp,jpg"
+          width="316"
+          height="316"
+          sizes="316px md:433px"
+          alt=""
+          class="w-full bg-zinc-800"
+          :img-attrs="{
+            class: 'w-full aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover bg-zinc-800',
+          }"
+        />
       </div>
     </div>
     <div class="lg:order-first lg:row-span-2">

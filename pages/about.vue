@@ -4,7 +4,7 @@ import socialLinks from "~/data/socialLinks";
 
 <template>
   <main class="isolate w-full pt-28 bg-secondary-dark mt-16 sm:mt-32 pb-16 sm:pb-32">
-    <div class="container">
+    <div class="container mx-auto">
       <AboutBio />
     </div>
     <AboutCounter />

@@ -14,9 +14,9 @@ export const socialLinks = [
 
   {
     id: 4,
-    name: "spencer@planetaria.tech",
+    name: "sinveraguilo@gmail.com",
     icon: "i-heroicons-envelope-solid",
-    url: "mailto:spencer@planetaria.tech",
+    url: "mailto:sinveraguilo@gmail.com",
   },
 ];
 
