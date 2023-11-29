@@ -56,8 +56,7 @@ export default defineNuxtConfig({
   },
 
   image: {
-    // Options
-    // dir: "/assets/images",
+    format: ["webp"],
   },
 
   css: ["~/assets/styles/main.scss"],

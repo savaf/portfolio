@@ -10,6 +10,7 @@
   <div class="relative isolate overflow-hidden pb-16 pt-14 sm:pb-20 w-full min-h-screen">
     <NuxtPicture
       src="/images/background_dark.jpg"
+      format="webp,jpg"
       width="1097"
       height="845"
       sizes="sm:100vw"
