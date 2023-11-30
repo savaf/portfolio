@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import projects from "@/data/projects";
+const projects = await queryContent("projects").find();
 
 const projectsHeading = "Projects Portfolio";
 const projectsDescription = "Some of the projects I have successfully completed";
@@ -62,7 +62,7 @@ function filterProjectsBySearch() {
     <!-- Projects grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
       <div v-for="project in filteredProjects" :key="project.id" class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-ternary-dark" aria-label="Single Project">
-        <NuxtLink :to="`/projects/${project.id}`">
+        <NuxtLink :to="`/projects/${project.slug}`">
           <div>
             <NuxtPicture
               :src="project.img"
