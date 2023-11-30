@@ -1,9 +1,36 @@
-<script></script>
+<script>
+export default {
+  scrollToTop: true,
+  data: () => {
+    return {
+      contacts: [
+        {
+          id: 1,
+          name: "Your Address, Your City, Your Country",
+          icon: "map-pin",
+        },
+        {
+          id: 2,
+          name: "email@domain.com",
+          icon: "mail",
+        },
+        {
+          id: 3,
+          name: "555 8888 888",
+          icon: "phone",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 <template>
-  <main class="isolate w-full bg-secondary-dark">
-    <div class="container">contact</div>
-  </main>
-</template>
+  <div class="container mx-auto flex flex-col-reverse md:flex-row md:py-10 md:mt-20">
+    <!-- Contact form -->
+    <ContactForm />
 
-<style scoped></style>
+    <!-- Contact details -->
+    <ContactDetails :contacts="contacts" />
+  </div>
+</template>
