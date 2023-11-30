@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/content",
     "@nuxtjs/eslint-module",
-    "@nuxtjs/partytown",
+    // "@nuxtjs/partytown",
   ],
 
   routeRules: {
@@ -80,7 +80,7 @@ export default defineNuxtConfig({
         },
       ],
       script: [
-        { children: "window.$plausible = [];" },
+        // { children: "window.$plausible = [];" },
         // {
         //   defer: true,
         //   src: "https://plausible.io/js/plausible.js",
