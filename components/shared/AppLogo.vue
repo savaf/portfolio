@@ -8,7 +8,7 @@ defineOptions({
 </script>
 <template>
   <span>
-    <NuxtImg src="/images/logo.png" :alt="appConfig.title + ' Logo'" v-bind="$attrs" />
+    <NuxtImg src="/images/logo.png" sizes="sm:59px, lg:68px" :alt="appConfig.title + ' Logo'" v-bind="$attrs" />
     <span class="sr-only">
       {{ appConfig.title }}
     </span>
