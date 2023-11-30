@@ -39,7 +39,7 @@
 
       <!-- Banner right illustration -->
       <div class="w-full md:w-2/3 text-right float-right">
-        <NuxtImg sizes="60vw" src="/images/developer-dark.svg" alt="Developer Dark" />
+        <NuxtImg width="60wv" height="auto" sizes="60vw" src="/images/developer-dark.svg" alt="Developer Dark" />
 
         <!-- <img v-if="colorMode.value == 'dark'" src="/images/developer-dark.svg" alt="Developer Dark" />
         <img v-else src="/images/developer.svg" alt="Developer Light" /> -->
