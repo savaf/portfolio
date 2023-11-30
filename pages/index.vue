@@ -1,6 +1,6 @@
 <template>
   <main class="isolate">
     <SectionHero />
-    <SectionProjects />
+    <LazySectionProjects />
   </main>
 </template>
