@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     "/**": isDev
       ? {}
       : {
+          isr: 60,
           cache: {
             swr: true,
             maxAge: 120,
@@ -30,16 +31,16 @@ export default defineNuxtConfig({
             headersOnly: true,
           },
         },
-    // "/": isDev
-    //   ? {}
-    //   : {
-    //       prerender: true,
-    //     },
-    // "/api/*": isDev
-    //   ? {}
-    //   : {
-    //       cache: { maxAge: 60 * 60 },
-    //     },
+    "/": isDev
+      ? {}
+      : {
+          prerender: true,
+        },
+    "/api/*": isDev
+      ? {}
+      : {
+          cache: { maxAge: 60 * 60 },
+        },
   },
 
   runtimeConfig: {
@@ -49,12 +50,6 @@ export default defineNuxtConfig({
     // Keys within public are also exposed client-side
     public: {
       apiBase: "/api",
-    },
-  },
-
-  nitro: {
-    routeRules: {
-      "/**": { isr: false },
     },
   },
 
@@ -93,6 +88,7 @@ export default defineNuxtConfig({
 
   image: {
     format: ["webp"],
+    domains: isDev ? ["localhost"] : ["sinveraguilo.com"],
   },
 
   css: ["~/assets/styles/main.scss"],
