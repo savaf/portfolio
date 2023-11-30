@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/eslint-module",
     // "@nuxtjs/partytown",
+    "nuxt-gtag",
   ],
 
   routeRules: {
@@ -149,5 +150,9 @@ export default defineNuxtConfig({
 
   partytown: {
     forward: ["$plausible", "$plausible.push"],
+  },
+
+  gtag: {
+    initialConsent: true,
   },
 });

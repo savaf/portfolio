@@ -41,6 +41,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "flowbite": "^2.2.0",
     "nuxt": "^3.8.2",
+    "nuxt-gtag": "^1.1.1",
     "nuxt-icon": "^0.6.6",
     "prettier": "^3.1.0",
     "rimraf": "^5.0.5",
