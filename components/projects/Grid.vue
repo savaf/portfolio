@@ -8,7 +8,7 @@ const projectsDescription = "Some of the projects I have successfully completed"
 const searchString = ref("");
 const filteredProjects = ref([]);
 const onlyFields = ["title", "category", "img", "slug"];
-const limit = isProjectsRoute ? await queryContent("projects").count() : 6;
+let limit = isProjectsRoute ? await queryContent("projects").count() : 6;
 
 watch([searchString], async () => {
   if (searchString.value) {
@@ -28,8 +28,10 @@ function fetchProjects() {
     .find();
 }
 
-onMounted(async () => {
-  filteredProjects.value = await fetchProjects();
+useAsyncData("projects", () => {
+  return fetchProjects();
+}).then(({ data }) => {
+  filteredProjects.value = data.value;
 });
 
 function filterProjectsBySearch(searchString: string) {
@@ -112,7 +114,7 @@ function filterProjectsBySearch(searchString: string) {
           <button type="button" class="hidden sm:block bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer" @click="filterProjectsBySearch">
             <Icon name="i-heroicons-magnifying-glass" class="w-6 h-6 text-ternary-light" aria-hidden="true" />
           </button>
-          <input id="name" v-model="searchString" class="font-general-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-secondary-dark rounded-lg text-sm sm:text-md bg-ternary-dark text-ternary-light" name="name" type="search" required placeholder="Search Projects" aria-label="Name" @keydown.enter="filterProjectsBySearch" />
+          <input id="name" v-model="searchString" @keyup.enter="filterProjectsBySearch" class="font-general-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-secondary-dark rounded-lg text-sm sm:text-md bg-ternary-dark text-ternary-light" name="name" type="search" required placeholder="Search Projects" aria-label="Name" />
         </div>
         <!-- <ProjectsFilter @change="selectedProject = $event" /> -->
       </div>

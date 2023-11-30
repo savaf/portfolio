@@ -6,7 +6,7 @@ const { project, as = "div" } = defineProps<{
     img: string;
     slug: string;
   };
-  as: string;
+  as?: string;
 }>();
 </script>
 
