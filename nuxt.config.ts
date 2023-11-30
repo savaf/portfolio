@@ -4,6 +4,10 @@ const isDev = process.env.NODE_ENV === "development";
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  experimental: {
+    viewTransition: true,
+  },
+
   modules: [
     "@nuxt/image",
     "@nuxtjs/tailwindcss",

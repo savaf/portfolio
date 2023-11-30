@@ -1,5 +1,5 @@
 <template>
-  <main class="isolate w-full pt-28 bg-secondary-dark mt-16 sm:mt-32">
+  <main class="isolate w-full pt-28 bg-secondary-dark">
     <div class="container mx-auto">
       <AboutBio />
     </div>

@@ -1,8 +1,9 @@
 <template>
   <div class="bg-primary-dark min-h-screen flex flex-col backdrop-blur-md">
     <SharedAppHeader />
-
-    <slot />
+    <div class="pt-16">
+      <slot />
+    </div>
 
     <SharedAppFooter />
 
