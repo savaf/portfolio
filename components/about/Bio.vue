@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import socialLinks from "~/data/socialLinks";
+const { links: socialLinks } = await queryContent("social_links").findOne();
+
+const { data } = await useAsyncData("page-data", () => queryContent("/bio").findOne());
 </script>
 
 <template>
@@ -23,9 +25,7 @@ import socialLinks from "~/data/socialLinks";
     <div class="lg:order-first lg:row-span-2">
       <h1 class="text-4xl font-bold tracking-tight text-ternary-light sm:text-5xl">BIOGRAPHY</h1>
       <div class="mt-6 space-y-7 text-base text-ternary-light">
-        <p>I’m Sinver Aguiló a web developer and UI/UX designer with a passion for creating beautiful, functional, and user-centered digital experiences. With 7+ years of experience in the field. I am always looking for new and innovative ways to bring my clients' visions to life.</p>
-        <p>I believe that design is about more than just making things look pretty – it's about solving problems and creating intuitive, enjoyable experiences for users.</p>
-        <p>Whether I'm working on a website, mobile app, or other digital product, I bring my commitment to design excellence and user-centered thinking to every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.</p>
+        <ContentRendererMarkdown :value="data" />
       </div>
     </div>
     <div class="lg:pl-20">
