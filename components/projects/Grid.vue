@@ -1,34 +1,128 @@
 <script setup lang="ts">
-const projects = await queryContent("projects").find();
+const route = useRoute();
+
+const isProjectsRoute = route.name === "projects";
 
 const projectsHeading = "Projects Portfolio";
 const projectsDescription = "Some of the projects I have successfully completed";
 let selectedProject = "";
-let searchProject = "";
+let searchString = ref("");
+let filteredProjects = ref([]);
+const onlyFields = ["title", "category", "img", "slug"];
+const limit = isProjectsRoute ? await queryContent("projects").count() : 6;
 
-const filteredProjects = computed(() => {
-  if (selectedProject) {
-    return projects.filter((item) => {
-      let category = item.category.charAt(0).toUpperCase() + item.category.slice(1);
-      return category.includes(selectedProject);
-    });
-  } else if (searchProject) {
-    let project = new RegExp(searchProject, "i");
-    return projects.filter((el) => el.title.match(project));
+watch([searchString], async () => {
+  if (searchString.value) {
+    filteredProjects.value = await filterProjectsBySearch(searchString.value);
+  } else {
+    filteredProjects.value = await fetchProjects();
   }
-  return projects;
 });
 
-function filterProjectsByCategory() {
-  return projects.filter((item) => {
-    let category = item.category.charAt(0).toUpperCase() + item.category.slice(1);
-    return category.includes(selectedProject);
-  });
+function fetchProjects() {
+  return queryContent("projects")
+    .limit(limit)
+    .sort({
+      position: 1,
+    })
+    .only(onlyFields)
+    .find();
 }
 
-function filterProjectsBySearch() {
-  let project = new RegExp(searchProject, "i");
-  return projects.filter((el) => el.title.match(project));
+onMounted(async () => {
+  filteredProjects.value = await fetchProjects();
+});
+
+// const filteredProjects = await queryContent("projects")
+//   .where({
+//     $or: [
+//       { title: { $regex: searchString, $options: "i" } }, // 'i' hace que la búsqueda sea insensible a mayúsculas y minúsculas
+//       { category: { $regex: searchString, $options: "i" } },
+//       { client: { $regex: searchString, $options: "i" } },
+//       { "projectDetails.details": { $regex: searchString, $options: "i" } }, // Accede a los detalles del proyecto dentro del array
+//       { objectivesDetails: { $regex: searchString, $options: "i" } },
+//       { tag: { $in: [new RegExp(searchString, "i")] } }, // Busca la cadena en el array tag
+//       { technologies: { $in: [new RegExp(searchString, "i")] } }, // Busca la cadena en el array technologies
+//     ],
+//   })
+//   .limit(6)
+//   .find();
+// console.log(filteredProjects);
+
+// const filteredProjects = computed(() => {
+//   // if (selectedProject) {
+//   //   return projects.filter((item) => {
+//   //     let category = item.category.charAt(0).toUpperCase() + item.category.slice(1);
+//   //     return category.includes(selectedProject);
+//   //   });
+//   // } else
+//   // if (searchString.value) {
+//   //   return filterProjectsBySearch(searchString.value);
+//   // }
+//   return await queryContent("projects")
+//     .limit(6)
+//     .sort({
+//       position: 1,
+//     })
+//     .find();
+// });
+
+function filterProjectsBySearch(searchString: string) {
+  return queryContent("projects")
+    .where({
+      $or: [
+        {
+          title: {
+            $icontains: searchString,
+          },
+        },
+        {
+          category: {
+            $icontains: searchString,
+          },
+        },
+        {
+          client: {
+            $icontains: searchString,
+          },
+        },
+        {
+          "projectDetails.details": {
+            $icontains: searchString,
+          },
+        },
+        {
+          objectivesDetails: {
+            $icontains: searchString,
+          },
+        },
+        // {
+        //   tag: {
+        //     $in: [new RegExp(searchString, "i")],
+        //   },
+        // },
+        // {
+        //   technologies: {
+        //     $in: [new RegExp(searchString, "i")],
+        //   },
+        // },
+      ],
+      // $or: [
+      //   { title: { $regex: searchString, $options: "i" } }, // 'i' hace que la búsqueda sea insensible a mayúsculas y minúsculas
+      //   { category: { $regex: searchString, $options: "i" } },
+      //   { client: { $regex: searchString, $options: "i" } },
+      //   { "projectDetails.details": { $regex: searchString, $options: "i" } }, // Accede a los detalles del proyecto dentro del array
+      //   { objectivesDetails: { $regex: searchString, $options: "i" } },
+      //   { tag: { $in: [new RegExp(searchString, "i")] } }, // Busca la cadena en el array tag
+      //   { technologies: { $in: [new RegExp(searchString, "i")] } }, // Busca la cadena en el array technologies
+      // ],
+    })
+    .limit(limit)
+    .sort({
+      position: 1,
+    })
+    .only(onlyFields)
+    .find();
 }
 </script>
 
@@ -53,15 +147,15 @@ function filterProjectsBySearch() {
           <button type="button" @click="filterProjectsBySearch" class="hidden sm:block bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer">
             <Icon name="i-heroicons-magnifying-glass" class="w-6 h-6 text-ternary-light" aria-hidden="true" />
           </button>
-          <input v-model="searchProject" class="font-general-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-secondary-dark rounded-lg text-sm sm:text-md bg-ternary-dark text-ternary-light" id="name" name="name" type="search" required placeholder="Search Projects" aria-label="Name" @keyup.enter="filterProjectsBySearch" />
+          <input v-model="searchString" class="font-general-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-secondary-dark rounded-lg text-sm sm:text-md bg-ternary-dark text-ternary-light" id="name" name="name" type="search" required placeholder="Search Projects" aria-label="Name" @keydown.enter="filterProjectsBySearch" />
         </div>
-        <ProjectsFilter @change="selectedProject = $event" />
+        <!-- <ProjectsFilter @change="selectedProject = $event" /> -->
       </div>
     </form>
 
     <!-- Projects grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-      <div v-for="project in filteredProjects" :key="project.id" class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-ternary-dark" aria-label="Single Project">
+      <div v-for="project in filteredProjects" :key="project.slug" class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-ternary-dark" aria-label="Single Project">
         <NuxtLink :to="`/projects/${project.slug}`">
           <div>
             <NuxtPicture

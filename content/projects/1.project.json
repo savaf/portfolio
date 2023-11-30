@@ -5,7 +5,7 @@
   "category": "Web Application",
   "img": "/images/projects/web-project-2.jpg",
   "publishDate": "Nov 04, 2021",
-  "tag": "UI / Frontend",
+  "tag": ["UI", "Frontend"],
   "clientTitle": "About Client",
   "objectivesTitle": "Objective",
   "objectivesDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.",
