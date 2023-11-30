@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import socialLinks from "~/data/socialLinks.js";
+const { links: socialLinks } = await queryContent("social_links").findOne();
 </script>
 
 <template>
