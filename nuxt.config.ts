@@ -43,9 +43,18 @@ export default defineNuxtConfig({
   },
 
   app: {
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
+      title: "Sinver Aguiló",
       htmlAttrs: { lang: "en" },
-      meta: [{ charset: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, { name: "keywords", content: "" }, { name: "format-detection", content: "telephone=no" }],
+      meta: [
+        // SEO meta tags
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "keywords", content: "" },
+        { name: "format-detection", content: "telephone=no" },
+        { name: "description", content: "Hi, I'm Sinver Aguiló, web developer in Santo Domingo, República Dominicana." },
+      ],
       link: [
         {
           rel: "shortcut icon",
