@@ -24,7 +24,7 @@
       }"
     />
 
-    <section class="container mx-auto flex flex-col sm:justify-between items-center sm:flex-row mt-12 sm:mt-10">
+    <section class="container mx-auto flex flex-col items-center sm:flex-row sm:justify-center mt-12 sm:mt-10">
       <!-- Banner left contents -->
       <div class="w-full md:w-1/3 text-left">
         <h1 class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-light uppercase">Hi, I'm Sinver Aguiló</h1>
@@ -38,8 +38,8 @@
       </div>
 
       <!-- Banner right illustration -->
-      <div class="w-full md:w-2/3 text-right float-right">
-        <NuxtImg width="575" height="522" sizes="sm:60vw" src="/images/developer-dark.svg" alt="Developer Dark" />
+      <div class="w-full md:w-auto text-right float-right">
+        <NuxtImg width="575" height="522" sizes="sm:575px" src="/images/developer-dark.svg" alt="Developer Dark" />
 
         <!-- <img v-if="colorMode.value == 'dark'" src="/images/developer-dark.svg" alt="Developer Dark" />
         <img v-else src="/images/developer.svg" alt="Developer Light" /> -->
