@@ -100,7 +100,7 @@ const { data: project, pending } = await useAsyncData("projects", () => {
         </div>
 
         <!-- Project related projects -->
-        <!-- <ProjectsRelatedProjects /> -->
+        <ProjectsRelatedProjects />
       </div>
       <!-- Load not found components if no project found -->
       <div v-else class="font-general-medium container mx-auto text-center text-ternary-light">
