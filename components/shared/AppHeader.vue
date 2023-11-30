@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Dialog, DialogPanel, TransitionRoot, TransitionChild } from "@headlessui/vue";
 
-const { links: navigation } = await queryContent("navigation").findOne();
+const { data } = await useAsyncData("navigation", () => {
+  return queryContent("navigation").findOne();
+});
 
 const mobileMenuOpen = ref(false);
 
@@ -18,7 +20,7 @@ function closeMobileMenu() {
       <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex flex-1">
           <div class="hidden lg:flex lg:gap-x-12">
-            <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href" class="text-sm font-semibold leading-6 text-white">
+            <NuxtLink v-for="item in data.links" :key="item.name" :to="item.href" class="text-sm font-semibold leading-6 text-white">
               {{ item.name }}
             </NuxtLink>
           </div>
@@ -59,7 +61,7 @@ function closeMobileMenu() {
                 </div>
               </div>
               <div class="mt-6 space-y-2">
-                <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-secondary-dark" @click="closeMobileMenu">
+                <NuxtLink v-for="item in data.links" :key="item.name" :to="item.href" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-secondary-dark" @click="closeMobileMenu">
                   {{ item.name }}
                 </NuxtLink>
               </div>

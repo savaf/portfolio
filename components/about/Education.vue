@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const educations = await queryContent("education").find();
+const { data: educations } = await useAsyncData("education", () => {
+  return queryContent("education").find();
+});
 </script>
 
 <template>

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const jobExperiences = await queryContent("experiences").find();
+const { data: jobExperiences } = await useAsyncData("experiences", () => {
+  return queryContent("experiences").find();
+});
 </script>
 
 <template>

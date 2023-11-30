@@ -1,7 +1,8 @@
 <script setup lang="ts">
-const { links: socialLinks } = await queryContent("social_links").findOne();
-
 const { data } = await useAsyncData("page-data", () => queryContent("/bio").findOne());
+const { data: socialLinks } = await useAsyncData("social_links", () => {
+  return queryContent("social_links").findOne();
+});
 </script>
 
 <template>
@@ -30,7 +31,7 @@ const { data } = await useAsyncData("page-data", () => queryContent("/bio").find
     </div>
     <div class="lg:pl-20">
       <ul role="list" class="space-y-4">
-        <li v-for="social in socialLinks" :key="social.id" class="flex">
+        <li v-for="social in socialLinks.links" :key="social.id" class="flex">
           <NuxtLink :href="social.url" target="_blank" class="group flex text-sm font-medium text-zinc-200 hover:text-teal-500">
             <Icon :name="social.icon" class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
             <span class="ml-4">{{ social.name }}</span>
