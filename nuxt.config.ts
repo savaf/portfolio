@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-icon",
     "@nuxt/content",
+    "@nuxtjs/eslint-module",
   ],
 
   routeRules: {
@@ -28,6 +29,16 @@ export default defineNuxtConfig({
             headersOnly: true,
           },
         },
+    // "/": isDev
+    //   ? {}
+    //   : {
+    //       prerender: true,
+    //     },
+    // "/api/*": isDev
+    //   ? {}
+    //   : {
+    //       cache: { maxAge: 60 * 60 },
+    //     },
   },
 
   runtimeConfig: {
@@ -124,5 +135,9 @@ export default defineNuxtConfig({
     classPrefix: "",
     classSuffix: "",
     storageKey: "sinveraguilo-nuxt-color-mode",
+  },
+
+  eslint: {
+    /* module options */
   },
 });
