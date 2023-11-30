@@ -18,6 +18,9 @@ const props = defineProps({
         <NuxtPicture
           :src="project.img"
           :alt="project.title"
+          width="393"
+          height="192"
+          sizes="393px sm:332px md:393px"
           format="webp,jpg"
           :img-attrs="{
             class: 'w-full h-48 sm:h-56 object-cover object-center rounded-t-xl',
