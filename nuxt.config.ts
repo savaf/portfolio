@@ -88,7 +88,7 @@ export default defineNuxtConfig({
 
   image: {
     format: ["webp"],
-    domains: isDev ? ["localhost"] : ["sinveraguilo.com"],
+    // domains: isDev ? ["localhost"] : ["sinveraguilo.com"],
   },
 
   css: ["~/assets/styles/main.scss"],
