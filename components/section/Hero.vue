@@ -15,7 +15,7 @@
       height="845"
       sizes="sm:100vw"
       alt=""
-      :placeholder="[50, 50, 50, 15]"
+      :placeholder="[50, 50, 10, 15]"
       class="absolute inset-0 -z-10 h-full w-full"
       :img-attrs="{
         class: 'absolute h-full w-full object-cover object-right md:object-center saturate-50',
