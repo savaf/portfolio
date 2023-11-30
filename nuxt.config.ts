@@ -51,6 +51,7 @@ export default defineNuxtConfig({
     // Keys within public are also exposed client-side
     public: {
       apiBase: "/api",
+      gtagId: "G-1ZQZQZQZQZ",
     },
   },
 
@@ -153,6 +154,6 @@ export default defineNuxtConfig({
   },
 
   gtag: {
-    initialConsent: true,
+    // initialConsent: true,
   },
 });
