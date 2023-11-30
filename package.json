@@ -15,7 +15,7 @@
     "lint": "yarn lint:js && yarn lint:prettier",
     "lintfix": "prettier --write --list-different . && pnpm lint:js --fix",
     "lhci:mobile": "lhci autorun",
-    "lhci:server": "pnpm dlx unlighthouse --site localhost:3000"
+    "unlighthouse": "dotenv -- cross-var pnpm dlx unlighthouse --site %NUXT_PUBLIC_UNLIGHTHOUSE%"
   },
   "devDependencies": {
     "@lhci/cli": "^0.12.0",
@@ -34,7 +34,10 @@
     "@typescript-eslint/parser": "^6.13.1",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
+    "cross-var": "^1.1.0",
     "daisyui": "^4.4.14",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-universe": "^12.0.0",
