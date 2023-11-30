@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Dialog, DialogPanel } from "@headlessui/vue";
 
-const navigation = await queryContent("navigation").findOne();
+const { links: navigation } = await queryContent("navigation").findOne();
 
 const mobileMenuOpen = ref(false);
 </script>
@@ -11,7 +11,7 @@ const mobileMenuOpen = ref(false);
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex flex-1">
         <div class="hidden lg:flex lg:gap-x-12">
-          <a v-for="item in navigation.links" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-white">{{ item.name }}</a>
+          <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-white">{{ item.name }}</a>
         </div>
         <div class="flex lg:hidden">
           <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white" @click="mobileMenuOpen = true">
