@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /** @type {import('tailwindcss').Config} */
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
