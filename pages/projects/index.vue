@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-  <main class="isolate w-full min-h-screen bg-secondary-dark">
+  <main class="isolate w-full bg-secondary-dark pb-16 md:pb-32">
     <div class="container">
       <ProjectsGrid />
     </div>

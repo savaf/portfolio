@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <div class="relative isolate overflow-hidden pb-16 pt-14 sm:pb-20 w-full min-h-screen">
+  <div class="relative isolate overflow-hidden pb-16 pt-14 sm:pb-20 w-full">
     <NuxtPicture
       src="/images/background_dark.jpg"
       format="webp"
