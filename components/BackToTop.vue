@@ -1,5 +1,5 @@
 <script setup>
-let userScrollPosition = ref(0);
+const userScrollPosition = ref(0);
 const isScrolled = computed(() => userScrollPosition.value > 100);
 
 onMounted(() => {

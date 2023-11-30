@@ -5,9 +5,8 @@ const isProjectsRoute = route.name === "projects";
 
 const projectsHeading = "Projects Portfolio";
 const projectsDescription = "Some of the projects I have successfully completed";
-let selectedProject = "";
-let searchString = ref("");
-let filteredProjects = ref([]);
+const searchString = ref("");
+const filteredProjects = ref([]);
 const onlyFields = ["title", "category", "img", "slug"];
 const limit = isProjectsRoute ? await queryContent("projects").count() : 6;
 
@@ -32,40 +31,6 @@ function fetchProjects() {
 onMounted(async () => {
   filteredProjects.value = await fetchProjects();
 });
-
-// const filteredProjects = await queryContent("projects")
-//   .where({
-//     $or: [
-//       { title: { $regex: searchString, $options: "i" } }, // 'i' hace que la búsqueda sea insensible a mayúsculas y minúsculas
-//       { category: { $regex: searchString, $options: "i" } },
-//       { client: { $regex: searchString, $options: "i" } },
-//       { "projectDetails.details": { $regex: searchString, $options: "i" } }, // Accede a los detalles del proyecto dentro del array
-//       { objectivesDetails: { $regex: searchString, $options: "i" } },
-//       { tag: { $in: [new RegExp(searchString, "i")] } }, // Busca la cadena en el array tag
-//       { technologies: { $in: [new RegExp(searchString, "i")] } }, // Busca la cadena en el array technologies
-//     ],
-//   })
-//   .limit(6)
-//   .find();
-// console.log(filteredProjects);
-
-// const filteredProjects = computed(() => {
-//   // if (selectedProject) {
-//   //   return projects.filter((item) => {
-//   //     let category = item.category.charAt(0).toUpperCase() + item.category.slice(1);
-//   //     return category.includes(selectedProject);
-//   //   });
-//   // } else
-//   // if (searchString.value) {
-//   //   return filterProjectsBySearch(searchString.value);
-//   // }
-//   return await queryContent("projects")
-//     .limit(6)
-//     .sort({
-//       position: 1,
-//     })
-//     .find();
-// });
 
 function filterProjectsBySearch(searchString: string) {
   return queryContent("projects")
@@ -144,10 +109,10 @@ function filterProjectsBySearch(searchString: string) {
       <h3 class="font-general-regular text-center text-ternary-light text-md sm:text-xl font-normal mb-4">Search projects by title or filter by category</h3>
       <div class="flex justify-between border-b border-secondary-dark pb-3 gap-2">
         <div class="flex justify-between gap-2">
-          <button type="button" @click="filterProjectsBySearch" class="hidden sm:block bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer">
+          <button type="button" class="hidden sm:block bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer" @click="filterProjectsBySearch">
             <Icon name="i-heroicons-magnifying-glass" class="w-6 h-6 text-ternary-light" aria-hidden="true" />
           </button>
-          <input v-model="searchString" class="font-general-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-secondary-dark rounded-lg text-sm sm:text-md bg-ternary-dark text-ternary-light" id="name" name="name" type="search" required placeholder="Search Projects" aria-label="Name" @keydown.enter="filterProjectsBySearch" />
+          <input id="name" v-model="searchString" class="font-general-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-secondary-dark rounded-lg text-sm sm:text-md bg-ternary-dark text-ternary-light" name="name" type="search" required placeholder="Search Projects" aria-label="Name" @keydown.enter="filterProjectsBySearch" />
         </div>
         <!-- <ProjectsFilter @change="selectedProject = $event" /> -->
       </div>
@@ -155,7 +120,7 @@ function filterProjectsBySearch(searchString: string) {
 
     <!-- Projects grid -->
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-      <ProjectsCard as="article" :project="project" v-for="project in filteredProjects" :key="project.slug" />
+      <ProjectsCard v-for="project in filteredProjects" :key="project.slug" as="article" :project="project" />
     </section>
   </div>
 </template>

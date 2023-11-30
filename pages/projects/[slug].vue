@@ -27,7 +27,7 @@ const project = await queryContent("projects").where({ slug: route.params.slug }
 
         <!-- Project gallery -->
         <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
-          <div class="mb-10 sm:mb-0" v-for="projectImage in project.projectImages" :key="projectImage.id">
+          <div v-for="projectImage in project.projectImages" :key="projectImage.id" class="mb-10 sm:mb-0">
             <img :src="projectImage.img" class="rounded-xl cursor-pointer shadow-lg sm:shadow-none" />
           </div>
         </div>
@@ -37,7 +37,7 @@ const project = await queryContent("projects").where({ slug: route.params.slug }
           <!-- Single project left section details -->
           <div class="w-full sm:w-1/3 text-left">
             <!-- Single project client details -->
-            <div class="mb-7" v-if="project.companyInfos.length">
+            <div v-if="project.companyInfos.length" class="mb-7">
               <p class="font-general-medium text-2xl text-secondary-light mb-2">
                 {{ project.clientTitle }}
               </p>

@@ -1,14 +1,13 @@
 <script setup lang="ts">
-const props = defineProps({
+const { project, as = "div" } = defineProps<{
   project: {
-    type: Object,
-    required: true,
-  },
-  as: {
-    type: String,
-    default: "div",
-  },
-});
+    title: string;
+    category: string;
+    img: string;
+    slug: string;
+  };
+  as: string;
+}>();
 </script>
 
 <template>
