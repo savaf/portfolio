@@ -1,13 +1,19 @@
 <script setup lang="ts">
 const route = useRoute();
-const project = await queryContent("projects").where({ slug: route.params.slug }).findOne();
+
+const { data: project, pending } = await useAsyncData("projects", () => {
+  return queryContent("projects").where({ slug: route.params.slug }).findOne();
+});
 </script>
 
 <template>
   <main class="isolate w-full mt-16 sm:mt-32 pb-16 sm:pb-32">
     <div class="container mx-auto">
       <!-- Check if there are projects and then load -->
-      <div v-if="project">
+      <div v-if="pending" class="font-general-medium container mx-auto text-center text-ternary-light">
+        <h1>Loading...</h1>
+      </div>
+      <div v-else-if="project">
         <!-- Project heading and meta info -->
         <div>
           <p class="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-light mt-14 sm:mt-20 mb-7">
@@ -28,7 +34,7 @@ const project = await queryContent("projects").where({ slug: route.params.slug }
         <!-- Project gallery -->
         <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
           <div v-for="projectImage in project.projectImages" :key="projectImage.id" class="mb-10 sm:mb-0">
-            <img :src="projectImage.img" class="rounded-xl cursor-pointer shadow-lg sm:shadow-none" />
+            <NuxtPicture :src="projectImage.img" class="rounded-xl cursor-pointer shadow-lg sm:shadow-none" />
           </div>
         </div>
 
@@ -94,11 +100,10 @@ const project = await queryContent("projects").where({ slug: route.params.slug }
         </div>
 
         <!-- Project related projects -->
-        <ProjectsRelatedProjects />
+        <!-- <ProjectsRelatedProjects /> -->
       </div>
-
       <!-- Load not found components if no project found -->
-      <div v-else class="font-general-medium container mx-auto text-center">
+      <div v-else class="font-general-medium container mx-auto text-center text-ternary-light">
         <h1>No projects yet</h1>
       </div>
     </div>
