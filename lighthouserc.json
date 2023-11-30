@@ -1,0 +1,12 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "pnpm build && pnpm start",
+      "url": ["http://localhost:3000/", "http://localhost:3000/about", "http://localhost:3000/projects", "http://localhost:3000/contact"],
+      "numberOfRuns": 3
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

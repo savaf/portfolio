@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/content",
     "@nuxtjs/eslint-module",
+    "@nuxtjs/partytown",
   ],
 
   routeRules: {
@@ -78,6 +79,15 @@ export default defineNuxtConfig({
           href: "/images/logo.png",
         },
       ],
+      script: [
+        { children: "window.$plausible = [];" },
+        // {
+        //   defer: true,
+        //   src: "https://plausible.io/js/plausible.js",
+        //   type: "text/partytown",
+        //   "data-domain": "https://www.sinveraguilo.com",
+        // },
+      ],
     },
   },
 
@@ -139,5 +149,9 @@ export default defineNuxtConfig({
 
   eslint: {
     /* module options */
+  },
+
+  partytown: {
+    forward: ["$plausible", "$plausible.push"],
   },
 });
