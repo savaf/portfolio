@@ -19,9 +19,9 @@ const { project, as = "div" } = defineProps<{
           :alt="project.title"
           format="webp"
           legacy-format="jpg"
-          width="393px"
-          height="192px"
-          sizes="393px sm:332px md:393px"
+          width="336"
+          height="224"
+          sizes="sm:336px md:393px"
           loading="lazy"
           :img-attrs="{
             class: 'w-full h-48 sm:h-56 object-cover object-center rounded-t-xl',
