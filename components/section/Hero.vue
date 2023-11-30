@@ -10,11 +10,13 @@
   <div class="relative isolate overflow-hidden pb-16 pt-14 sm:pb-20 w-full min-h-screen">
     <NuxtPicture
       src="/images/background_dark.jpg"
-      format="webp,jpg"
+      format="webp"
+      legacy-format="jpg"
       width="1097"
       height="845"
       sizes="sm:100vw"
       alt=""
+      preload
       :placeholder="[50, 50, 10, 15]"
       class="absolute inset-0 -z-10 h-full w-full"
       :img-attrs="{

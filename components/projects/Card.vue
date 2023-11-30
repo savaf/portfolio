@@ -18,10 +18,12 @@ const props = defineProps({
         <NuxtPicture
           :src="project.img"
           :alt="project.title"
+          format="webp"
+          legacy-format="jpg"
           width="393"
           height="192"
           sizes="393px sm:332px md:393px"
-          format="webp,jpg"
+          loading="lazy"
           :img-attrs="{
             class: 'w-full h-48 sm:h-56 object-cover object-center rounded-t-xl',
           }"
