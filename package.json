@@ -15,7 +15,7 @@
     "lint": "yarn lint:js && yarn lint:prettier",
     "lintfix": "prettier --write --list-different . && pnpm lint:js --fix",
     "lhci:mobile": "lhci autorun",
-    "lhci:desktop": "lhci autorun --collect.settings.preset=desktop"
+    "lhci:server": "pnpm dlx unlighthouse --site localhost:3000"
   },
   "devDependencies": {
     "@lhci/cli": "^0.12.0",
