@@ -121,8 +121,11 @@ function filterProjectsBySearch(searchString: string) {
     </form>
 
     <!-- Projects grid -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
+    <section v-if="filteredProjects?.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
       <ProjectsCard v-for="project in filteredProjects" :key="project.slug" as="article" :project="project" />
+    </section>
+    <section v-else class="flex justify-center items-center h-96">
+      <p class="font-general-medium text-ternary-light text-2xl">No projects found</p>
     </section>
   </div>
 </template>
