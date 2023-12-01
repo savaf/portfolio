@@ -2,6 +2,8 @@ const isDev = process.env.NODE_ENV === "development";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
+
   devtools: { enabled: true },
 
   experimental: {
@@ -42,6 +44,14 @@ export default defineNuxtConfig({
     //   : {
     //       cache: { maxAge: 60 * 60 },
     //     },
+  },
+
+  nitro: {
+    static: true,
+    // prerender: {
+    //   crawlLinks: true,
+    //   routes: ["/sitemap.xml", "/robots.txt"],
+    // },
   },
 
   runtimeConfig: {

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "node .output/server/index.mjs",
-    "build": "nuxt build",
+    "build": "nuxt build --prerender",
     "clean": "rimraf .nuxt dist .cache .output node_modules",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
