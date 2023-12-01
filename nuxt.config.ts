@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     "/**": isDev
       ? {}
       : {
-          isr: 60,
+          // isr: 60,
           cache: {
             swr: true,
             maxAge: 120,
@@ -37,11 +37,11 @@ export default defineNuxtConfig({
       : {
           prerender: true,
         },
-    "/api/*": isDev
-      ? {}
-      : {
-          cache: { maxAge: 60 * 60 },
-        },
+    // "/api/*": isDev
+    //   ? {}
+    //   : {
+    //       cache: { maxAge: 60 * 60 },
+    //     },
   },
 
   runtimeConfig: {
