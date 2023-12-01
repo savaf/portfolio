@@ -30,15 +30,15 @@ function sendEmail() {
       <form class="font-general-regular space-y-7" @submit.prevent="sendEmail">
         <div class="">
           <label class="block text-lg text-primary-light mb-2" for="name">Full Name</label>
-          <input id="name" v-model="emailDataToSend.name" class="w-full px-5 py-2 border border-primary-dark border-opacity-50 text-secondary-light bg-ternary-dark rounded-md shadow-sm text-md" name="name" type="text" required="" placeholder="Your Name" aria-label="Name" />
+          <input id="name" v-model="emailDataToSend.name" class="w-full px-5 py-2 border border-primary-dark border-opacity-50 text-secondary-light bg-ternary-dark rounded-md shadow-sm text-md" name="name" type="text" required placeholder="Your Name" aria-label="Name" />
         </div>
         <div class="mt-6">
           <label class="block text-lg text-primary-light mb-2" for="email">Email</label>
-          <input id="email" v-model="emailDataToSend.email" class="w-full px-5 py-2 border border-primary-dark border-opacity-50 text-secondary-light bg-ternary-dark rounded-md shadow-sm text-md" name="email" type="text" required="" placeholder="Your Email" aria-label="Email" />
+          <input id="email" v-model="emailDataToSend.email" class="w-full px-5 py-2 border border-primary-dark border-opacity-50 text-secondary-light bg-ternary-dark rounded-md shadow-sm text-md" name="email" type="text" required placeholder="Your Email" aria-label="Email" />
         </div>
         <div class="mt-6">
           <label class="block text-lg text-primary-light mb-2" for="subject">Subject</label>
-          <input id="subject" v-model="emailDataToSend.subject" class="w-full px-5 py-2 border border-primary-dark border-opacity-50 text-secondary-light bg-ternary-dark rounded-md shadow-sm text-md" name="subject" type="text" required="" placeholder="Subject" aria-label="Subject" />
+          <input id="subject" v-model="emailDataToSend.subject" class="w-full px-5 py-2 border border-primary-dark border-opacity-50 text-secondary-light bg-ternary-dark rounded-md shadow-sm text-md" name="subject" type="text" required placeholder="Subject" aria-label="Subject" />
         </div>
 
         <div class="mt-6">
@@ -47,7 +47,7 @@ function sendEmail() {
         </div>
 
         <div class="mt-6">
-          <button type="submit" class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500" aria-label="Send Message" @click="sendEmail">Send Message</button>
+          <button type="submit" aria-label="Send Message" class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500" @click="sendEmail">Send Message</button>
         </div>
       </form>
     </div>
