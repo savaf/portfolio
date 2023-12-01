@@ -32,11 +32,11 @@ export default defineNuxtConfig({
             headersOnly: true,
           },
         },
-    "/": isDev
-      ? {}
-      : {
-          prerender: true,
-        },
+    // "/": isDev
+    //   ? {}
+    //   : {
+    //       prerender: true,
+    //     },
     // "/api/*": isDev
     //   ? {}
     //   : {
