@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data: project, pending } = await useAsyncData("projects", () => {
+const { data: project, pending } = await useAsyncData("projects/" + route.params.slug, () => {
   return queryContent("projects").where({ slug: route.params.slug }).findOne();
 });
 </script>
@@ -43,7 +43,7 @@ const { data: project, pending } = await useAsyncData("projects", () => {
           <!-- Single project left section details -->
           <div class="w-full sm:w-1/3 text-left">
             <!-- Single project client details -->
-            <div v-if="project.companyInfos.length" class="mb-7">
+            <div v-if="project.companyInfos?.length" class="mb-7">
               <p class="font-general-medium text-2xl text-secondary-light mb-2">
                 {{ project.clientTitle }}
               </p>
@@ -76,7 +76,7 @@ const { data: project, pending } = await useAsyncData("projects", () => {
             </div>
 
             <!-- Single project social sharing -->
-            <div v-if="project.socialLinks.length">
+            <div v-if="project.socialLinks?.length">
               <p class="font-general-medium text-2xl text-ternary-light mb-2">
                 {{ project.socialTitle }}
               </p>
