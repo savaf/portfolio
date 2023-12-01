@@ -8,7 +8,7 @@ const props = defineProps<{
 const statusCode = ref(props.error.statusCode || 404);
 const statusMessage = ref(props.error.statusMessage || "Unknown error");
 const message = ref(props.error.message || "Sorry, there was an error. Please try again later.");
-const stack = ref(props.error.stack || "");
+// const stack = ref(props.error.stack || "");
 
 // Head
 useHead({
