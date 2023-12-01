@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node .output/server/index.mjs",
     "build": "nuxt build --prerender",
-    "clean": "rimraf .nuxt dist .cache .output node_modules",
+    "clean": "rimraf .nuxt dist .cache .output node_modules .lighthouseci .vercel .unlighthouse",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
