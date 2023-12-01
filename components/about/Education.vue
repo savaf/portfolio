@@ -1,7 +1,12 @@
 <script setup lang="ts">
-const { data: educations } = await useAsyncData("education", () => {
-  return queryContent("education").find();
-});
+const { educations } = defineProps<{
+  educations: {
+    title: string;
+    date: string;
+    company: string;
+    description: string[];
+  }[];
+}>();
 </script>
 
 <template>

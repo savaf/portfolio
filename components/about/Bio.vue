@@ -1,8 +1,13 @@
 <script setup lang="ts">
-const { data } = await useAsyncData("page-data", () => queryContent("/bio").findOne());
-const { data: socialLinks } = await useAsyncData("social_links", () => {
-  return queryContent("social_links").findOne();
-});
+const { bio, socialLinks } = defineProps<{
+  bio: Record<string, any>;
+  socialLinks: {
+    id: string;
+    name: string;
+    url: string;
+    icon: string;
+  }[];
+}>();
 </script>
 
 <template>
@@ -26,12 +31,12 @@ const { data: socialLinks } = await useAsyncData("social_links", () => {
     <div class="lg:order-first lg:row-span-2">
       <h1 class="text-4xl font-bold tracking-tight text-ternary-light sm:text-5xl">BIOGRAPHY</h1>
       <div class="mt-6 space-y-7 text-base text-ternary-light">
-        <ContentRendererMarkdown :value="data" />
+        <ContentRendererMarkdown :value="bio" />
       </div>
     </div>
     <div class="lg:pl-20">
       <ul role="list" class="space-y-4">
-        <li v-for="social in socialLinks.links" :key="social.id" class="flex">
+        <li v-for="social in socialLinks" :key="social.id" class="flex">
           <NuxtLink :href="social.url" target="_blank" class="group flex text-sm font-medium text-zinc-200 hover:text-teal-500">
             <Icon :name="social.icon" class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
             <span class="ml-4">{{ social.name }}</span>

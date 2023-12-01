@@ -1,7 +1,14 @@
 <script setup lang="ts">
-const { data: jobExperiences } = await useAsyncData("experiences", () => {
-  return queryContent("experiences").find();
-});
+const { jobExperiences } = defineProps<{
+  jobExperiences: {
+    title: string;
+    date: string;
+    company: string;
+    description: string[];
+    position: string;
+    location: string;
+  }[];
+}>();
 </script>
 
 <template>
