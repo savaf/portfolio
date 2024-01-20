@@ -1,6 +1,6 @@
 <template>
   <div class="bg-primary-dark pb-8">
-    <section class="container mx-auto">
+    <section class="container mx-auto max-w-7xl">
       <ProjectsGrid />
 
       <!-- View more projects button -->

@@ -6,7 +6,7 @@ const { data: socialLinks } = await useAsyncData("social_links", () => {
 
 <template>
   <footer class="bg-primary-dark">
-    <div class="container mx-auto">
+    <div class="container mx-auto max-w-7xl">
       <div class="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-secondary-dark">
         <!-- Footer social links -->
         <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
