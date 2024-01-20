@@ -27,7 +27,7 @@ const { bio, socialLinks, educations, jobExperiences } = data.value;
 
 <template>
   <main class="isolate w-full pt-28 bg-secondary-dark">
-    <div class="container mx-auto">
+    <div class="container mx-auto max-w-7xl">
       <AboutBio :bio="bio" :social-links="socialLinks" />
     </div>
     <AboutCounter />

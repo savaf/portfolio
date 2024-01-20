@@ -8,7 +8,7 @@ const { data: project, pending } = await useAsyncData("projects/" + route.params
 
 <template>
   <main class="isolate w-full mt-16 sm:mt-32 pb-16 sm:pb-32">
-    <div class="container mx-auto">
+    <div class="container mx-auto max-w-7xl">
       <!-- Check if there are projects and then load -->
       <div v-if="pending" class="font-general-medium container mx-auto text-center text-ternary-light">
         <h1>Loading...</h1>
