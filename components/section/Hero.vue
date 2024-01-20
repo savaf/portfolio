@@ -4,6 +4,10 @@
 // const backgroundUrl = computed(() => {
 //   return colorMode.value === "dark" ? "/images/background_dark.jpg" : "/images/background.jpg";
 // });
+
+const { data } = await useAsyncData("social_links", () => {
+  return queryContent("social_links").findOne();
+});
 </script>
 
 <template>
@@ -29,6 +33,14 @@
       <div class="w-full md:w-1/3 text-left">
         <h1 class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-light uppercase">Hi, I'm Sinver Aguiló</h1>
         <p class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400 drop-shadow-lg">Turning Your Vision Into Reality With Code And Design.</p>
+
+        <nav class="flex gap-4 mt-8 flex-wrap">
+          <NuxtLink v-for="social in data.links" :key="social.id" :href="social.url" target="__blank" :class="['bg-white/5', 'border', 'border-white/10', 'rounded-full', 'flex', 'justify-center', 'items-center', 'gap-x-2', 'py-1', 'px-2', 'md:py-2', 'md:px-4', 'text-xs', 'md:text-base', 'text-white', 'transition', 'hover:scale-110', 'hover:bg-white/10']">
+            {{ social.name }}
+            <Icon :name="social.icon" class="w-6 h-6" aria-hidden="true" />
+          </NuxtLink>
+        </nav>
+
         <div class="flex justify-center sm:block">
           <a href="/Sinver-Aguilo-CV.pdf" download="" class="flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500" aria-label="Download Resume">
             <Icon name="i-heroicons-arrow-down-circle" class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100" aria-hidden="true" />
