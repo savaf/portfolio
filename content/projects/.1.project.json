@@ -3,10 +3,9 @@
   "slug": "project-1",
   "title": "Google Health Platform",
   "category": "Web Application",
-  "img": "/images/projects/web-project-2.jpg",
-  "publishDate": "Nov 04, 2021",
+  "img": "/images/projects/tip-calculator-desktop.jpg",
+  "publishDate": "Jan 22, 2024",
   "tag": ["UI", "Frontend"],
-  "clientTitle": "About Client",
   "objectivesTitle": "Objective",
   "objectivesDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.",
   "techTitle": "Tools & Technologies",
@@ -15,43 +14,16 @@
   "projectImages": [
     {
       "id": 1,
-      "title": "Uber Project Management UI",
-      "img": "/images/projects/ui-project-1.jpg"
+      "title": "Desktop View",
+      "img": "/images/projects/tip-calculator-desktop.jpg"
     },
     {
-      "id": 1,
-      "title": "Uber Project Management UI",
-      "img": "/images/projects/web-project-1.jpg"
-    },
-    {
-      "id": 1,
-      "title": "Uber Project Management UI",
-      "img": "/images/projects/web-project-2.jpg"
+      "id": 2,
+      "title": "mobile View",
+      "img": "/images/projects/tip-calculator-mobile.png"
     }
   ],
-  "companyInfos": [
-    {
-      "id": 1,
-      "title": "Name",
-      "details": "Company Ltd"
-    },
-    {
-      "id": 1,
-      "title": "Services",
-      "details": "UI Design & Frontend Development"
-    },
-    {
-      "id": 1,
-      "title": "Website",
-      "details": "https://company.com"
-    },
-    {
-      "id": 1,
-      "title": "Phone",
-      "details": "555 8888 888"
-    }
-  ],
-  "technologies": ["HTML", "CSS", "JavaScript", "Nuxt.js", "TailwindCSS", "AdobeXD"],
+  "technologies": ["HTML", "CSS", "JavaScript", "Nuxt.js", "TailwindCSS", "Figma"],
   "projectDetails": [
     {
       "id": 1,
@@ -71,11 +43,5 @@
     }
   ],
   "socialLinks": [
-    {
-      "id": 1,
-      "name": "LinkedIn",
-      "icon": "i-fa-linkedin",
-      "url": "https://linkedin.com/in/realstoman"
-    }
   ]
 }

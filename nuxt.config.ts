@@ -17,7 +17,6 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "nuxt-icon",
     "@nuxt/content",
-    "@nuxtjs/eslint-module",
     // "@nuxtjs/partytown",
     "nuxt-gtag",
   ],

@@ -1,6 +1,6 @@
 <template>
   <main class="isolate">
     <SectionHero />
-    <SectionProjects />
+    <!-- <SectionProjects /> -->
   </main>
 </template>
