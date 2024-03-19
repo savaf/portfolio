@@ -10,7 +10,7 @@ let seoMetaOptions: Record<string, string> = {
   title: titleTemplate(route.meta.title || appConfig.title),
   url: appConfig.url + route.path,
   description: route.meta.description as string || appConfig.description,
-  icon: appConfig.url + '/images/logo.png',
+  icon: appConfig.url + '/images/og-logo.png',
 }
 
 if (route.meta.image) {
