@@ -10,14 +10,12 @@ let seoMetaOptions: Record<string, string> = {
   title: titleTemplate(route.meta.title || appConfig.title),
   url: appConfig.url + route.path,
   description: route.meta.description as string || appConfig.description,
-  icon: appConfig.url + '/images/og-logo.png',
+  icon: '/images/og-logo.png',
 }
 
-if (route.meta.image) {
-  const ogImage = appConfig.url + route.meta.image
-  seoMetaOptions.ogImage = ogImage
-  seoMetaOptions.twitterImage = ogImage
-}
+const ogImage =  route.meta.image ?  route.meta.image : '/images/og-image.png'
+seoMetaOptions.ogImage = ogImage
+seoMetaOptions.twitterImage = ogImage
 
 useSeoMeta({
   ...seoMetaOptions,
