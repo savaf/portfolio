@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     // "@nuxtjs/partytown",
     "nuxt-gtag",
+    // '@nuxtjs/seo',
   ],
 
   routeRules: {
@@ -75,13 +76,20 @@ export default defineNuxtConfig({
         // SEO meta tags
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "keywords", content: "" },
+        // { name: "keywords", content: "" },
         { name: "format-detection", content: "telephone=no" },
-        { name: "description", content: "Hi, I'm Sinver Aguiló, web developer in Santo Domingo, República Dominicana." },
+        // { name: "description", content: "Hi, I'm Sinver Aguiló, web developer in Santo Domingo, República Dominicana." },
+
+        // // Open Graph / Facebook
+        // { property: "og:type", content: "website" },
+        // { property: "og:url", content: "https://www.sinveraguilo.com" },
+        // { property: "og:title", content: "Sinver Aguiló" },
+        // { property: "og:description", content: "Hi, I'm Sinver Aguiló, web developer in Santo Domingo, República Dominicana." },
+        // { property: "og:image", content: "/images/logo.png" },
       ],
       link: [
         {
-          rel: "shortcut icon",
+          rel: "icon",
           type: "image/png",
           href: "/images/logo.png",
         },

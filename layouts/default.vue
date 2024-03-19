@@ -1,3 +1,36 @@
+<script setup lang="ts">
+const appConfig = useAppConfig()
+const route = useRoute()
+
+function titleTemplate(title) {
+  return title !== (appConfig.title as string) ? `${appConfig.title} · ${title}` : title
+}
+
+let seoMetaOptions: Record<string, string> = {
+  title: titleTemplate(route.meta.title || appConfig.title),
+  url: appConfig.url + route.path,
+  description: route.meta.description as string || appConfig.description,
+  icon: appConfig.url + '/images/logo.png',
+}
+
+if (route.meta.image) {
+  const ogImage = appConfig.url + route.meta.image
+  seoMetaOptions.ogImage = ogImage
+  seoMetaOptions.twitterImage = ogImage
+}
+
+useSeoMeta({
+  ...seoMetaOptions,
+  ogTitle: seoMetaOptions.title,
+  ogDescription: seoMetaOptions.description,
+  ogUrl: seoMetaOptions.url,
+
+  twitterTitle: seoMetaOptions.title,
+  twitterDescription: seoMetaOptions.description,
+  twitterCard: 'summary'
+})
+</script>
+
 <template>
   <div class="bg-primary-dark min-h-screen flex flex-col backdrop-blur-md">
     <SharedAppHeader />

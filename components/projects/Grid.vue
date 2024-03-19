@@ -7,7 +7,7 @@ const projectsHeading = "Projects Portfolio";
 const projectsDescription = "Some of the projects I have successfully completed";
 const searchString = ref("");
 const filteredProjects = ref([]);
-const onlyFields = ["title", "category", "img", "slug"];
+const onlyFields = ["title", "category", "image", "slug"];
 const limit = isProjectsRoute ? await queryContent("projects").count() : 6;
 
 watch([searchString], async () => {

@@ -3,7 +3,7 @@ const { project, as = "div" } = defineProps<{
   project: {
     title: string;
     category: string;
-    img: string;
+    image: string;
     slug: string;
   };
   as?: string;
@@ -15,7 +15,7 @@ const { project, as = "div" } = defineProps<{
     <NuxtLink :to="`/projects/${project.slug}`">
       <div>
         <NuxtPicture
-          :src="project.img"
+          :src="project.image"
           :alt="project.title"
           format="webp"
           legacy-format="jpg"

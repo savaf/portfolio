@@ -1,3 +1,9 @@
+<script setup lang="ts">
+// definePageMeta({
+//   image: "/images/logo.png",
+// })
+</script>
+
 <template>
   <main class="isolate w-full pb-16 sm:pb-32 bg-secondary-dark">
     <div class="container mx-auto max-w-7xl">
@@ -6,6 +12,10 @@
         <h1>Loading...</h1>
       </div> -->
       <ContentDoc v-slot="{ doc }">
+        <Head>
+          <Title>{{ doc.title }}</Title>
+          <Meta name="og:image" :content="doc.image" />
+        </Head>
         <div>
           <!-- Project heading and meta info -->
           <div>

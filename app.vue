@@ -1,3 +1,17 @@
+<script setup lang="ts">
+const appConfig = useAppConfig()
+
+useHead({
+  htmlAttrs: {
+    lang: appConfig.lang as string,
+  },
+  title: appConfig.title as string,
+  titleTemplate: (title) =>
+    title !== (appConfig.title as string)
+      ? `${title} · ${appConfig.title}`
+      : title,
+})
+</script>
 <template>
   <NuxtLayout>
     <NuxtPage />
