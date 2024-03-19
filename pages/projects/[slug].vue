@@ -1,5 +1,5 @@
 <template>
-  <main class="isolate w-full mt-16 sm:mt-32 pb-16 sm:pb-32">
+  <main class="isolate w-full pb-16 sm:pb-32 bg-secondary-dark">
     <div class="container mx-auto max-w-7xl">
       <!-- Check if there are projects and then load -->
       <!-- <div v-if="pending" class="font-general-medium container mx-auto text-center text-ternary-light">
@@ -25,11 +25,11 @@
           </div>
 
           <!-- Project gallery -->
-          <div class="gallery mt-12">
+          <div class="mt-12 grid grid-cols-1 gap-y-4 lg:grid-cols-3 lg:gap-x-4">
             <div
               v-for="projectImage in doc.projectImages"
               :key="projectImage.id"
-              class="mb-10 sm:mb-0 w-full lg:w-[350px] lg:h-[310px]"
+              class="mb-10 sm:mb-0 w-full lg:max-w-[350px] lg:max-h-[310px]"
             >
               <NuxtImg
                 :src="projectImage.img"
@@ -126,14 +126,14 @@
 </template>
 
 <style lang="scss">
-.gallery {
+/* .gallery {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  grid-gap: 1rem;
+  gap: 1rem;
   margin-top: 2rem;
 
   @screen sm {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
-}
+} */
 </style>

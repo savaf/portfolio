@@ -70,6 +70,7 @@ export default defineNuxtConfig({
     head: {
       title: "Sinver Aguiló",
       htmlAttrs: { lang: "en" },
+      bodyAttrs: { class: "antialiased" },
       meta: [
         // SEO meta tags
         { charset: "utf-8" },
