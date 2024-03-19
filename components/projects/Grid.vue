@@ -3,7 +3,7 @@ const route = useRoute();
 
 const isProjectsRoute = route.name === "projects";
 
-const projectsHeading = "Projects Portfolio";
+const projectsHeading = "Projects";
 const projectsDescription = "Some of the projects I have successfully completed";
 const searchString = ref("");
 const filteredProjects = ref([]);
@@ -101,14 +101,14 @@ function filterProjectsBySearch(searchString: string) {
         {{ projectsHeading }}
       </p>
       <!-- Note: This description is commented out, but if you want to see it, just uncomment this -->
-      <p class="text-lg sm:text-xl text-gray-500 dark:text-ternary-light">
+      <!-- <p class="text-lg sm:text-xl text-gray-500 dark:text-ternary-light">
         {{ projectsDescription }}
-      </p>
+      </p> -->
     </div>
 
     <!-- Filter and search projects -->
     <form class="mt-8 sm:mt-10">
-      <h3 class="font-general-regular text-center text-ternary-light text-md sm:text-xl font-normal mb-4">Search projects by title or filter by category</h3>
+      <!-- <h3 class="font-general-regular text-center text-ternary-light text-md sm:text-xl font-normal mb-4">Search projects by title or filter by category</h3> -->
       <div class="flex justify-between border-b border-secondary-dark pb-3 gap-2">
         <div class="flex justify-between gap-2">
           <button type="button" class="hidden sm:block bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer" @click="filterProjectsBySearch">

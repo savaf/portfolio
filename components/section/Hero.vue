@@ -31,8 +31,8 @@ const { data } = await useAsyncData("social_links", () => {
     <section class="container mx-auto flex flex-col items-center sm:flex-row sm:justify-center mt-12 sm:mt-10">
       <!-- Banner left contents -->
       <div class="w-full md:w-1/3 text-left">
-        <h1 class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-light uppercase">Hi, I'm Sinver Aguiló</h1>
-        <p class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400 drop-shadow-lg">Turning Your Vision Into Reality With Code And Design.</p>
+        <h1 class="font-bold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-light uppercase">Hi, I'm Sinver Aguiló</h1>
+        <p class="mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-white drop-shadow-lg">Turning Your Vision Into Reality With Code And Design.</p>
 
         <nav class="flex gap-4 mt-8 flex-wrap">
           <NuxtLink v-for="social in data.links" :key="social.id" :href="social.url" target="__blank" :class="['bg-white/5', 'border', 'border-white/10', 'rounded-full', 'flex', 'justify-center', 'items-center', 'gap-x-2', 'py-1', 'px-2', 'md:py-2', 'md:px-4', 'text-xs', 'md:text-base', 'text-white', 'transition', 'hover:scale-110', 'hover:bg-white/10']">
