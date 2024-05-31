@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
+
 const appConfig = useAppConfig()
 const route = useRoute()
 
@@ -40,5 +42,7 @@ useSeoMeta({
     <div class="flex space-x-2 mr-8 mb-6 right-0 bottom-0 z-50 fixed items-center sm:space-x-4">
       <LazyBackToTop />
     </div>
+
+    <SpeedInsights />
   </div>
 </template>
