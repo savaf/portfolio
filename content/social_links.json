@@ -1,0 +1,16 @@
+{
+  "links": [
+    {
+      "id": 2,
+      "name": "GitHub",
+      "icon": "i-fa-github",
+      "url": "https://github.com/savaf"
+    },
+    {
+      "id": 3,
+      "name": "LinkedIn",
+      "icon": "i-fa-linkedin",
+      "url": "https://www.linkedin.com/in/sinver-aguilo"
+    }
+  ]
+}

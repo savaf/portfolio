@@ -1,0 +1,38 @@
+:root {
+  --background-url : url(/images/background_dark.jpg);
+}
+
+/* body {
+  overflow: hidden;
+  display: contents;
+} */
+
+/* :root {
+  --sb-track-color: transparent;
+  --sb-thumb-color: rgba(255, 255, 255, 0.1);
+}
+
+*::-webkit-scrollbar {
+  width: .5rem;
+  height: 1rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--sb-thumb-color);
+  border-color: 1px solid white;
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--sb-track-color);
+  border-radius: 9999px;
+}
+
+
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+} */
+

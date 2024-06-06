@@ -1,0 +1,9 @@
+{
+  "company": "DA Sistemas Integrados · Internship",
+  "position": "Web Developer · Full-time",
+  "date": "Apr 2017 - Aug 2017 · 5 mos",
+  "location": "Santo Domingo, Dominican Republic",
+  "skills": ["JavaScript", "Vue.js", "Vuex", "CSS", "SASS", "TFS", "Zoho", "SCRUM"],
+  "description": ["During my internship at DA Sistemas Integrados, I had the opportunity to work on accounting and fuel management applications. In addition, I participated in a migration project aimed at transferring a monolithic Visual PRO/5 application to a Nodejs-based structure with microservices architecture.", "In this project, I contributed to developing all user interface screens for some modules. I leveraged technologies such as AngularJS, NodeJS, and Microsoft SQL Server. Moreover, I deployed the application with IIS on a dedicated server with Windows Server.", "Furthermore, during my time at the company, I provided support for the maintenance of the Visual PRO/5 application for in-house users."],
+  "images": []
+}
