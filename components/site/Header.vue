@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { Dialog, DialogPanel, } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
@@ -19,6 +19,60 @@ const navigation = [
 ]
 
 const mobileMenuOpen = ref(false)
+
+// Dock animation
+const { $anime } = useNuxtApp()
+const dockElement = ref<HtmlElement | null>(null)
+
+function getDistance(v1, v2) {
+  return Math.sqrt((v1.x - v2.x) ** 2 + (v1.y - v2.y) ** 2)
+}
+
+function onMouseOverDock(event: MouseEvent) {
+  const items = dockElement.value?.querySelectorAll('.dock-item') as NodeListOf<HTMLElement>
+
+  const mousePosition = {
+    x: event.clientX,
+    y: event.clientY
+  }
+
+  items.forEach((item) => {
+    const rect = item.getBoundingClientRect()
+    const itemPosition = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2
+    }
+
+    const distance = getDistance(mousePosition, itemPosition)
+    const scale = 1 - distance / 200
+    const translation = 10 - distance / 20
+    const expansion = 1 + scale
+
+    $anime({
+      targets: item,
+      translateY: -translation,
+      scale: 1 + scale,
+      width: 40 * expansion,
+      easing: 'easeInOutSine',
+      delay: 0,
+    })
+  })
+}
+
+function onMouseLeaveDock() {
+  // const items = dockElement.value?.querySelectorAll('.dock-item') as NodeListOf<HTMLElement>
+  // items.forEach((item) => {
+  //   $anime({
+  //     targets: item,
+  //     scale: 1,
+  //     width: 40,
+  //     translateY: 0,
+  //     easing: 'easeInOutSine',
+  //     delay: 0,
+  //     duration: 10,
+  //   })
+  // })
+}
 </script>
 
 <template>
@@ -75,7 +129,6 @@ const mobileMenuOpen = ref(false)
         <a rel="" aria-label="Proyectos" href="/proyectos">
           <div
             class="z-30 flex items-center justify-center w-10 rounded-full box-gen aspect-square bg-neutral-200/70 dark:bg-neutral-900/70 "
-            style="width: 40px;"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg" width="40"
@@ -157,21 +210,26 @@ const mobileMenuOpen = ref(false)
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <div class="box-gen group flex mx-auto h-16 items-end gap-4 rounded-2xl px-4 pb-2.5 outline-0 ring-1 ring-zinc-200 dark:ring-[#1a1a1a]"">
+      <div
+        ref="dockElement"
+        class="box-gen group flex mx-auto h-16 items-end gap-4 rounded-2xl px-4 pb-2.5 outline-0 ring-1 ring-zinc-200 dark:ring-[#1a1a1a]""
+        @mouseover="onMouseOverDock"
+        @mouseleave="onMouseLeaveDock"
+      >
         <SiteNavButton
           v-for="item in navigation"
           :key="item.name"
           :item="item"
-          class="ease-in duration-300 group-hover:scale-110  hover:group-hover:scale-150"
+          class="ease-in dock-item"
         />
         <hr class=" mt-2.5 h-10 w-[1px] border-none bg-neutral-300 dark:bg-neutral-700">
         <SiteNavButton
           :item="{ name: 'Switch to light theme', icon: 'i-line-md-moon-rising-twotone-alt-loop' }"
-          class="ease-in duration-300 group-hover:scale-110  hover:group-hover:scale-150"
+          class="ease-in dock-item"
         />
         <SiteNavButton
           :item="{ name: 'Menu', icon: 'i-line-md-menu' }"
-          class="ease-in duration-300 group-hover:scale-110  hover:group-hover:scale-150"
+          class="ease-in dock-item"
         />
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">

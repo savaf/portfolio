@@ -52,7 +52,7 @@
     </div> -->
 
     <!-- Header -->
-    <!-- <SiteHeader /> -->
+    <SiteHeader />
 
     <div>
       <slot />
