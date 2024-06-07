@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
-  htmlAttrs: { lang: 'en', class: 'h-full bg-gray-50 dark:bg-gray-950' },
-  bodyAttrs: { class: 'antialiased h-full' },
+  htmlAttrs: { lang: 'en', class: 'h-full' },
+  bodyAttrs: { class: 'antialiased h-full bg-gray-200 dark:bg-gray-950' },
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
