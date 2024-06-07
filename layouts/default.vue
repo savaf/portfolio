@@ -6,16 +6,16 @@
   <div
     class="fixed inset-0 -z-10 h-full w-full "
   >
-    <!-- <NuxtImg
+    <NuxtImg
       class="absolute inset-0 -z-10 h-full w-full object-cover hidden dark:block"
       src="/images/background_dark.jpg"
       alt=""
-    /> -->
-    <!-- <NuxtImg
+    />
+    <NuxtImg
       class="absolute inset-0 -z-10 h-full w-full object-cover block dark:hidden"
       src="/images/background_light.jpg"
       alt=""
-    /> -->
+    />
     <!-- <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
       <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
       style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
@@ -38,7 +38,7 @@
       <div class="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)" />
     </div> -->
   </div>
-  <div class="relative min-h-screen  transform-gpu">
+  <div class="relative min-h-screen backdrop-blur-sm transform-gpu">
     <!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]" /> -->
 
     <!-- <div class="fixed w-full h-svh inset-0 z-0">

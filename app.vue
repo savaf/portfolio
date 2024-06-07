@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  htmlAttrs: { lang: 'en', class: 'h-full bg-white' },
+  htmlAttrs: { lang: 'en', class: 'h-full bg-gray-50 dark:bg-gray-950' },
   bodyAttrs: { class: 'antialiased h-full' },
   meta: [
     { charset: 'utf-8' },

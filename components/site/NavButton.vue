@@ -16,7 +16,7 @@ defineProps<{
   <NuxtLink
     :key="item.name"
     :href="item.href"
-    class="relative ease-in duration-300 group-hover:scale-110  hover:group-hover:scale-150"
+    class="relative"
     :aria-label="item.name"
   >
     <UTooltip :text="item.name" :popper="{ arrow: true, placement: 'top' }">
@@ -34,7 +34,7 @@ defineProps<{
         <template v-else-if="item.icon">
           <UIcon
             :name="item.icon"
-            class="w-4/6 fill-gray-900 stroke-gray-900 dark:fill-neutral-600 dark:stroke-neutral-300"
+            class="w-4/6"
           />
         </template>
       </div>
