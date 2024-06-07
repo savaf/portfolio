@@ -193,48 +193,6 @@ const openMobilePopover = ref(false)
     </div>
   </div>
 
-  <!-- <HUIPopover v-slot="{ open }" class="relative">
-    <HUIPopoverButton
-      :class="open ? 'text-white' : 'text-white/90'"
-      class="text-sm/6 font-semibold text-white/50 focus:outline-none data-[active]:text-white data-[hover]:text-white data-[focus]:outline-1 data-[focus]:outline-white"
-    >
-      Solutions
-    </HUIPopoverButton>
-
-    <transition
-      enter-active-class="transition duration-200 ease-out"
-      enter-from-class="translate-y-1 opacity-0"
-      enter-to-class="translate-y-0 opacity-100"
-      leave-active-class="transition duration-150 ease-in"
-      leave-from-class="translate-y-0 opacity-100"
-      leave-to-class="translate-y-1 opacity-0"
-    >
-      <HUIPopoverPanel
-        class="divide-y divide-white/5 rounded-xl bg-white/5 text-sm/6 [--anchor-gap:var(--spacing-5)]"
-      >
-        <div class="p-3">
-          <a class="block rounded-lg py-2 px-3 transition hover:bg-white/5" href="#">
-            <p class="font-semibold text-white">Insights</p>
-            <p class="text-white/50">Measure actions your users take</p>
-          </a>
-          <a class="block rounded-lg py-2 px-3 transition hover:bg-white/5" href="#">
-            <p class="font-semibold text-white">Automations</p>
-            <p class="text-white/50">Create your own targeted content</p>
-          </a>
-          <a class="block rounded-lg py-2 px-3 transition hover:bg-white/5" href="#">
-            <p class="font-semibold text-white">Reports</p>
-            <p class="text-white/50">Keep track of your growth</p>
-          </a>
-        </div>
-        <div class="p-3">
-          <a class="block rounded-lg py-2 px-3 transition hover:bg-white/5" href="#">
-            <p class="font-semibold text-white">Documentation</p>
-            <p class="text-white/50">Start integrating products and tools</p>
-          </a>
-        </div>
-      </HUIPopoverPanel>
-    </transition>
-  </HUIPopover> -->
   <!-- Blur effect -->
   <div class="fixed inset-x-0 bottom-0 isolate -z-10 h-[100px]">
     <div class="gradient-mask-t-0 absolute inset-0 backdrop-blur-[1px]" />
@@ -247,22 +205,11 @@ const openMobilePopover = ref(false)
 
 <style lang="css">
 .box-gen {
-  @apply border border-white bg-opacity-70
-  bg-gray-50 outline outline-1 outline-gray-200 bg-blend-luminosity
-  backdrop-blur-[24px] dark:border-black/10 dark:outline-[#1a1a1a] dark:bg-zinc-900/20
-  ;
-  /* bg-blend-luminosity outline-solid outline border-gray-200
-  backdrop-filter backdrop-blur-24 backdrop-brightness-100 backdrop-contrast-100
-  backdrop-grayscale-0 backdrop-hue-rotate-0 backdrop-invert-0
-  backdrop-opacity-100
-  backdrop-saturate-100 backdrop-sepia-0
-  dark:border-gray-10 dark:bg-opacity-20 dark:bg-gray-98 dark:outline-gray-100 */
-
-  /* @dark-mode { */
-  /* border-color: hsla(0,0%,100%,.1);
-  background-color: rgba(24,24,27,.2);
-  outline-color: #1a1a1a; */
-  /* } */
+  @apply bg-blend-luminosity backdrop-blur-[24px] bg-opacity-70
+  border border-white
+  bg-gray-50
+  outline outline-1 outline-gray-200
+  dark:border-black/10 dark:outline-[#1a1a1a] dark:bg-zinc-900/20;
 }
 
 .gradient-mask-t-0 {
