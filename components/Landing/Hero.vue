@@ -47,7 +47,7 @@ const links: HeroNavLink[] = [
       Hola, soy Sinver Aguilo
     </h1>
     <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-primary-200 [&>strong]:text-primary-500 [&>strong]:font-semibold dark:text-gray-300">
-      Im over +7 years of experience. <strong>Software Developer</strong> from Santo Domingo, Republica Dominicana <UIcon name="i-cif-do" />. Especialiced developing enterprise-class web applications that scale to meet the demands of users.
+      Im over +7 years of experience. <strong>Software Developer</strong> from Santo Domingo, Republica Dominicana <UIcon name="i-cif-do" class="w-4 h-4" />. Especialiced developing enterprise-class web applications that scale to meet the demands of users.
     </p>
     <nav class="flex flex-wrap gap-4 mt-8">
       <NuxtLink
