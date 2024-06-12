@@ -60,7 +60,6 @@ export default defineNuxtConfig({
     exposeConfig: {
       level: 2,
     },
-    injectPosition: 'first',
     viewer: true,
   },
 
