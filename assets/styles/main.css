@@ -2,12 +2,12 @@
   --background-url : url(/images/background_dark.jpg);
 }
 
-/* body {
+body {
   overflow: hidden;
   display: contents;
-} */
+}
 
-/* :root {
+:root {
   --sb-track-color: transparent;
   --sb-thumb-color: rgba(255, 255, 255, 0.1);
 }
@@ -34,5 +34,5 @@
   * {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
-} */
+}
 
