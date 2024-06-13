@@ -25,7 +25,7 @@
     <!-- Header -->
     <SiteHeader />
 
-    <div class="pt-16 sm:pt-32">
+    <div class="py-16 sm:pt-32">
       <slot />
     </div>
 
