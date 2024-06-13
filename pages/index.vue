@@ -3,13 +3,13 @@
 </script>
 
 <template>
-  <main>
-    <Container class="px-4 sm:px-8 lg:px-12">
+  <main class="mx-auto">
+    <Container class="px-4 sm:px-8 lg:px-12 mx-auto">
       <div class="mx-auto max-w-7xl lg:px-8">
         <LandingHero class="px-4 sm:px-8 lg:px-12" />
       </div>
     </Container>
-    <Container class="sm:px-8 mt-24 md:mt-10">
+    <Container class="sm:px-8 mt-24 md:mt-10 mx-auto">
       <div class="mx-auto max-w-7xl lg:px-8">
         <div class="relative px-4 sm:px-8 lg:px-12">
           <div class="max-w-full mx-auto">
