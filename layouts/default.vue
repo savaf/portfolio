@@ -5,7 +5,7 @@
 <template>
   <!-- Background Effects -->
   <div
-    class="fixed inset-0 -z-10 h-full w-full blur-sm"
+    class="fixed inset-0 -z-10 h-full w-full blur-sm dark:blur-sm"
   >
     <NuxtImg
       class="absolute inset-0 -z-10 h-full w-full object-cover hidden dark:block"
