@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/content",
     // "@nuxtjs/partytown",
-    "nuxt-gtag",
+    // "nuxt-gtag",
     // '@nuxtjs/seo',
   ],
 
