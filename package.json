@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node .output/server/index.mjs",
+    "start": "NODE_ENV=production node .output/server/index.mjs",
     "build": "nuxt build --prerender",
     "clean": "rimraf .nuxt dist .cache .output node_modules .lighthouseci .vercel .unlighthouse",
     "dev": "nuxt dev",
@@ -13,12 +13,9 @@
     "lint:js": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:js && yarn lint:prettier",
-    "lintfix": "prettier --write --list-different . && pnpm lint:js --fix",
-    "lhci:mobile": "lhci autorun",
-    "unlighthouse": "dotenv -- cross-var unlighthouse --site %NUXT_PUBLIC_UNLIGHTHOUSE%"
+    "lintfix": "prettier --write --list-different . && pnpm lint:js --fix"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.12.0",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.1.0",
     "@nuxtjs/color-mode": "^3.3.2",
@@ -51,7 +48,6 @@
     "rimraf": "^5.0.5",
     "sass": "^1.69.5",
     "typescript": "^5.3.2",
-    "unlighthouse": "^0.10.4",
     "vue": "^3.3.8",
     "vue-eslint-parser": "^9.3.2",
     "vue-router": "^4.2.5"
