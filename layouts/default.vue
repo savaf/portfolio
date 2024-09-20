@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { SpeedInsights } from "@vercel/speed-insights/nuxt"
-
 const appConfig = useAppConfig()
 const route = useRoute()
 
