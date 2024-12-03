@@ -1,9 +1,0 @@
-{
-  "company": "Per Diem · Contractor",
-  "position": "Full Stack Engineer · Full-time",
-  "date": "Apr 2021 - May 2021 · 2 mos",
-  "location": "California · Remote",
-  "skills": ["Vue.js", "JavaScript", "TypeScript", "Node.js", "Vuex", "SASS", "PostgreSQL", "Knex.js", "Redis", "Nuxt.js", "Agile Methodologies", "Kanban"],
-  "description": ["In my role, I helped create all the UI screens for some modules and supervised and reviewed all pull requests from team members. Additionally, I assisted colleagues in keeping them updated with all technologies and Vue best practices.", "Since the project requires 24/7 activity with an uptime of 99%, I ensured that all sites were fastened and resilient with network, data access, and intercommunication with services from another environment."],
-  "images": []
-}

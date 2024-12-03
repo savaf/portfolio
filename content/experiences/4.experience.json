@@ -1,9 +1,0 @@
-{
-  "company": "Khensys Corporation S.R.L · Contractor",
-  "position": "Vue Frontend Developer · Full-time",
-  "date": "Oct 2020 - Jan 2021 · 4 mos",
-  "location": "Santo Domingo, Dominican Republic · Remote",
-  "skills": ["JavaScript", "Vue.js", "Vuex", "CSS", "SASS", "TFS", "Zoho", "SCRUM"],
-  "description": ["In this position, I participated in a large migration project to transfer a monolithic Web Form .NET application to a client-server web app made with .Net core + Vue.js. As the frontend developer, I was responsible for designing the architecture for the whole solution, ensuring the reliability and scalability of the applications. Additionally, I assisted my colleagues in staying updated with all technologies and Vue and SCSS best practices. The role required working under the Scrum methodology throughout the project."],
-  "images": []
-}

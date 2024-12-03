@@ -1,9 +1,0 @@
-{
-  "company": "TwoCare · Employee",
-  "position": "Junior Web Developer · Full-time",
-  "date": "Aug 2017 - Dec 2017 · 5 mos",
-  "location": "Santo Domingo, Dominican Republic",
-  "skills": ["JavaScript", "Vue.js", "Vuex", "CSS", "SASS", "TFS", "Zoho", "SCRUM"],
-  "description": ["During my time as a junior web developer at TwoCare, I participated in the maintenance of three applications. One of the applications was a desktop application built using Electron that retrieved information such as specs, IP, domain, and DNS from the computer where the application was installed, to facilitate help desk support.", "Another application I worked on was an Angular-based dashboard used to display real-time information from an electric power production plant. I contributed to the development of this application's features and functionality.", "The third application was a Vue-based web application designed for call centers to manage call flows. I participated in the development of the application's user interface and utilized Vue, Sass, and WebSockets for the front-end implementation.", "Throughout my time at TwoCare, I utilized various technologies to ensure optimal application performance, including MySQL and Redis for caching, and CircleCI and Jenkins for continuous integration and delivery."],
-  "images": []
-}

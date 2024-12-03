@@ -1,9 +1,0 @@
-{
-  "company": "Corotos · Employee",
-  "position": "Senior Web Engineer · Full-time",
-  "date": "May 2021 - Apr 2022 · 1 yr",
-  "location": "Santo Domingo, Dominican Republic · Remote",
-  "skills": ["Vue.js", "JavaScript", "Ruby", "Ruby on Rails", "Vuex", "SASS", "PostgreSQL", "jQuery", "Tailwind CSS", "Redis", "Agile Methodologies", "Kanban", "Nuxt.js"],
-  "description": ["Corotos is the largest second-hand e-commerce platform in the Dominican Republic, I was responsible for designing the architecture for the migration of an e-commerce Ruby on Rails application. I helped create all the UI screens for some modules and supervised and reviewed all pull requests from team members. Additionally, I assisted colleagues to keep them updated with all technologies and Vue best practices. This project required 24/7 activity with an uptime of 99%, so all sites had to be fastened and resilient with network, data access, and intercommunication with services from another environment."],
-  "images": ["/images/experiences/corotos-desktop.jpeg", "/images/experiences/corotos-mobile.jpeg"]
-}
