@@ -25,11 +25,11 @@ defineProps<{
         style="width: 40px;"
       >
         <template v-if="item.image">
-          <NuxtImg
+          <img
             :src="item.image.src"
             class="w-5/6"
             v-bind="item.image"
-          />
+          >
         </template>
         <template v-else-if="item.icon">
           <UIcon

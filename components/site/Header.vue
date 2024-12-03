@@ -204,14 +204,6 @@ const openMobilePopover = ref(false)
 </template>
 
 <style lang="css">
-.box-gen {
-  @apply bg-blend-luminosity backdrop-blur-[24px] bg-opacity-70
-  border border-white
-  bg-gray-50
-  outline outline-1 outline-gray-200
-  dark:border-black/10 dark:outline-[#1a1a1a] dark:bg-zinc-900/20;
-}
-
 .gradient-mask-t-0 {
   -webkit-mask-image: linear-gradient(0deg,#000 0,transparent);
   mask-image: linear-gradient(0deg,#000 0,transparent);

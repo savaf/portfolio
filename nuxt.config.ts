@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-07-11',
   nitro: {
     static: true,
     prerender: {
@@ -11,6 +12,10 @@ export default defineNuxtConfig({
     viewTransition: true,
   },
 
+  future: {
+    compatibilityVersion: 4
+  },
+
   devtools: {
     enabled: true
   },
@@ -20,12 +25,12 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    'nuxt-headlessui',
+    // 'nuxt-headlessui',
     '@nuxt/ui',
-    // '@nuxtjs/tailwindcss', commented out because it's not needed with @nuxt/ui
-    '@nuxt/content',
-    '@nuxt/eslint',
-    '@nuxt/image',
+    // // '@nuxtjs/tailwindcss', commented out because it's not needed with @nuxt/ui
+    // '@nuxt/content',
+    // '@nuxt/eslint',
+    // '@nuxt/image',
     '@nuxtjs/google-fonts',
   ],
 
@@ -58,7 +63,7 @@ export default defineNuxtConfig({
   },
 
   ui: {
-    icons: ['heroicons', 'simple-icons', 'lucide', 'line-md']
+    // icons: ['heroicons', 'simple-icons', 'lucide', 'line-md']
   },
 
   tailwindcss: {
@@ -95,4 +100,6 @@ export default defineNuxtConfig({
     preconnect: true,
     preload: true,
   },
+
+  compatibilityDate: '2024-12-03',
 })

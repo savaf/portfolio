@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.box-gen {
+  @apply border border-white bg-zinc-50/70 bg-blend-luminosity
+  outline outline-1 outline-offset-0 outline-zinc-200 backdrop-blur-xl
+  dark:border-white/10 dark:bg-zinc-900/20 dark:outline-[#1a1a1a];
+}

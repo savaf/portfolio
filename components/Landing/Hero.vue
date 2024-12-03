@@ -34,6 +34,19 @@ const links: HeroNavLink[] = [
       class: '',
     }
   },
+  {
+    to: 'https://github.com/savaf',
+    label: 'Github',
+    class: '',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    role: 'link',
+    icon: {
+      name: 'i-simple-icons-github',
+      class: '',
+    }
+
+  },
 
 ]
 </script>
@@ -41,12 +54,12 @@ const links: HeroNavLink[] = [
 <template>
   <section class="max-w-xl">
     <div class="flex gap-4 mb-4">
-      <img class="rounded-full shadow-lg size-16" src="/images/portrait.jpg" alt="Miguel Ángel">
-      <a href="https://linkedin.com/in/midudev" target="_blank" rel="noopener" class="flex items-center transition md:justify-center md:hover:scale-105"> <div class="flex items-center ">
+      <img class="rounded-full shadow-lg size-16" src="/images/portrait.jpg" alt="Sinver Aguilo">
+      <a href="https://www.linkedin.com/in/sinver-aguilo/" target="_blank" rel="noopener" class="flex items-center transition md:justify-center md:hover:scale-105"> <div class="flex items-center ">
         <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
           <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]" />
           <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">
-            Disponible para trabajar
+            Available for new projects
           </div>
         </span>
       </div>
